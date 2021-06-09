@@ -1,0 +1,39 @@
+{
+  "content_scripts": [
+    {
+        "js": [
+            "fokus.js"
+        ],
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+        ]
+    }
+  ],
+  "description": "Emphasized text-highlighting",
+  "icons": {
+      "64": "Icon-64.png",
+      "128": "Icon-128.png"
+  },
+  "browser_action": {
+      "default_icon": {
+          "16": "Toolbar-Icon-16.png",
+          "19": "Toolbar-Icon-19.png",
+          "32": "Toolbar-Icon-32.png",
+          "38": "Toolbar-Icon-38.png"
+      },
+      "default_title": "Fokus"
+  },
+  "background": {
+      "scripts": ["background.js"]
+  },
+  "manifest_version": 2,
+  "name": "Fokus",
+  "options_ui": {
+      "page": "options.html"
+  },
+  "permissions": [
+      "storage"
+  ],
+  "version": "1.7"
+}

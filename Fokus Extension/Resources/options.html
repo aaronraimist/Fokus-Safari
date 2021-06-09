@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Fokus - Options</title>
+
+		<meta name="description" content="Fokus uses JavaScript to emphasize anything you select by covering the rest of the page with semi-transparent black.">
+
+		<style>
+
+			::selection {
+				background: #d1edf8;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				height: auto;
+			}
+
+			body {
+				background: #eee;
+				font-family: Helvetica, sans-serif;
+				font-size: 16px;
+				color: #222;
+			}
+
+			a {
+				color: #c2575b;
+				text-decoration: none;
+
+				-webkit-transition: 0.15s color ease;
+				   -moz-transition: 0.15s color ease;
+				    -ms-transition: 0.15s color ease;
+				     -o-transition: 0.15s color ease;
+				        transition: 0.15s color ease;
+			}
+				a:hover {
+					color: #f76f76;
+				}
+
+			h3 {
+				font-size: 16px;
+			}
+
+			button {
+				padding: 8px 14px;
+				border: none;
+				font-size: 14px;
+				border-radius: 2px;
+				background: #33be6b;
+				color: #fff;
+				cursor: pointer;
+				text-transform: uppercase;
+				margin-left: 5px;
+			}
+				button:hover {
+					background: #62d489;
+				}
+
+			.wrapper {
+				width: auto;
+			}
+				.wrapper section {
+					display: inline-block;
+					width: 49%;
+					padding-top: 30px;
+					padding-right: 30px;
+					padding-left: 30px;
+					vertical-align: middle;
+				}
+				.wrapper .left {
+					text-align: right;
+					border-right: 1px solid #ddd;
+				}
+					.wrapper .left img {
+						display: inline-block;
+					}
+
+				.wrapper .option {
+					margin-bottom: 30px;
+				}
+
+			#status {
+				opacity: 0;
+				text-align: center;
+			}
+
+		</style>
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<section class="left">
+				<h1><img src="Icon-128.png" width="128" height="128" alt="Fokus"></h1>
+			</section>
+			<section class="right">
+				<div class="option" title="Opacity of the black overlay that covers the page on selection.">
+					<h3>Overlay opacity</h3>
+					<select id="option-opacity">
+						<option value="0.9">90%</option>
+						<option value="0.7" selected>70%</option>
+						<option value="0.5">50%</option>
+						<option value="0.3">30%</option>
+						<option value="0.1">10%</option>
+					</select>
+				</div>
+				<div class="option" title="A modifier key that needs to be pressed down for the selection overlay to appear.">
+					<h3>Key modifier</h3>
+					<select id="option-modifier">
+						<option value="none" selected>none</option>
+						<option value="alt">option</option>
+						<option value="ctrl">control</option>
+						<option value="shift">shift</option>
+						<option value="meta">command</option>
+					</select>
+				</div>
+				<div class="option" title="Padding that is added to the selected region.">
+					<h3>Selection padding</h3>
+					<select id="option-padding">
+						<option value="30">30px</option>
+						<option value="20">20px</option>
+						<option value="15">15px</option>
+						<option value="10">10px</option>
+						<option value="5" selected>5px</option>
+						<option value="2">2px</option>
+						<option value="0">0px</option>
+					</select>
+				</div>
+                <div class="option" title="Background color for selected text.">
+                    <h3>Highlight color</h3>
+                    <select id="option-highlight-color">
+                        <option value="default" selected>default</option>
+                        <option value="transparent">transparent</option>
+                        
+<!--                        <option value="red">red</option>-->
+<!--                        <option value="orange">orange</option>-->
+<!--                        <option value="yellow">yellow</option>-->
+<!--                        <option value="green">green</option>-->
+<!--                        <option value="blue">blue</option>-->
+<!--                        <option value="indigo">indigo</option>-->
+<!--                        <option value="violet">violet</option>-->
+                    
+                    </select>
+                </div>
+			</section>
+			<p id="status">Options saved...</p>
+		</div>
+
+		<script src="options.js"></script>
+            
+	</body>
+</html>
